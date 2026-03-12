@@ -184,9 +184,11 @@ cp -r skills/research-lit ~/.claude/skills/
 ### Usage
 
 ```
+> /idea-creator DLLMs post training
 > /research-lit discrete diffusion language models
 > /research-review my paper on training dynamics in D-LLMs
 > /auto-review-loop ML paper on factorized gap diagnosis
+> /run-experiment train.py --lr 1e-4 --epochs 100
 > /analyze-results figures/*.json
 > /monitor-experiment server5
 ```
