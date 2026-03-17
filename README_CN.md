@@ -154,12 +154,13 @@ claude
 
 ## 🔄 工作流
 
-所有 Skills 组成完整科研流水线。三个工作流可以单独使用，也可以串联：
+所有 Skills 组成完整科研流水线。四个工作流可以单独使用，也可以串联：
 
 - **探索新方向（比如写 survey）？** 从工作流 1 开始 → `/idea-discovery`
-- **已有 idea + 初步方案？** 直接用工作流 2 → `/auto-review-loop`
+- **有计划了，需要实现和跑实验？** 工作流 1.5 → `/experiment-bridge`
+- **已有结果，需要迭代改进？** 工作流 2 → `/auto-review-loop`
 - **准备写论文了？** 工作流 3 → `/paper-writing`（或分步：`/paper-plan` → `/paper-figure` → `/paper-write` → `/paper-compile` → `/auto-paper-improvement-loop`）
-- **全流程？** 工作流 1 → 工作流 2 → 工作流 3 → `/research-pipeline`，从文献调研一路到投稿
+- **全流程？** 工作流 1 → 1.5 → 2 → 3 → `/research-pipeline`，从文献调研一路到投稿
 
 > ⚠️ **重要提醒：** 这些工具加速科研，但不能替代你自己的思考。生成的 idea 一定要用你的领域知识审视，质疑其假设，最终决策权在你手上。最好的研究 = 人的洞察 + AI 的执行力，而不是全自动流水线。
 

@@ -154,12 +154,13 @@ Domain-specific skills and external projects contributed by the community. PRs w
 
 ## 🔄 Workflows
 
-These skills compose into a full research lifecycle. The three workflows can be used independently or chained together:
+These skills compose into a full research lifecycle. The four workflows can be used independently or chained together:
 
 - **Exploring a new area (e.g., writing a survey)?** Start with Workflow 1 → `/idea-discovery`
-- **Already have an idea + initial plan?** Jump straight to Workflow 2 → `/auto-review-loop`
+- **Have a plan, need to implement and run?** Workflow 1.5 → `/experiment-bridge`
+- **Already have results, need iterative improvement?** Workflow 2 → `/auto-review-loop`
 - **Ready to write the paper?** Workflow 3 → `/paper-writing` (or step by step: `/paper-plan` → `/paper-figure` → `/paper-write` → `/paper-compile` → `/auto-paper-improvement-loop`)
-- **Full pipeline?** Workflow 1 → Workflow 2 → Workflow 3 → `/research-pipeline` — from literature survey all the way to submission
+- **Full pipeline?** Workflow 1 → 1.5 → 2 → 3 → `/research-pipeline` — from literature survey all the way to submission
 
 > ⚠️ **Important:** These tools accelerate research, but they don't replace your own critical thinking. Always review generated ideas with your domain expertise, question the assumptions, and make the final call yourself. The best research comes from human insight + AI execution, not full autopilot.
 
