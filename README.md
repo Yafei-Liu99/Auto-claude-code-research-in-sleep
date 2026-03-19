@@ -89,7 +89,7 @@ claude
 > | `DBLP_BIBTEX` | `true` | Fetch real BibTeX from [DBLP](https://dblp.org)/[CrossRef](https://www.crossref.org) instead of LLM-generated entries. Eliminates hallucinated citations. Zero install |
 > | `code review` | `true` | GPT-5.4 xhigh reviews experiment code before GPU deployment. Set `false` to skip |
 > | `wandb` | `false` | Auto-add W&B logging to experiment scripts. Set `true` + configure `wandb_project` in CLAUDE.md. `/monitor-experiment` pulls training curves from W&B |
-> | `illustration` | `false` | Auto-generate architecture/method diagrams via Gemini in Workflow 3. Requires `GEMINI_API_KEY` env var |
+> | `illustration` | `gemini` | AI illustration in Workflow 3: `gemini` (default, needs `GEMINI_API_KEY`), `mermaid` (free), or `false` (skip) |
 >
 > ```
 > /research-pipeline "your topic" — AUTO_PROCEED: false                          # pause at idea selection gate
@@ -451,7 +451,7 @@ Already have an experiment plan (from Workflow 1 or your own)? `/experiment-brid
 - ✂️ **De-AI polish** — removes AI writing patterns (delve, pivotal, landscape...)
 - 🎯 **Page verification** — `pdftotext`-based precise check that main body fits page limit
 
-> ⚠️ **Figure generation scope:** `/paper-figure` auto-generates **data-driven plots** (training curves, bar charts, heatmaps) and **comparison tables** from JSON/CSV. For **architecture diagrams and method figures**, set `illustration: true` to enable `/paper-illustration` (requires `GEMINI_API_KEY`) — it uses a Claude→Gemini→Nano Banana Pro pipeline to generate publication-quality diagrams automatically. Without `illustration: true`, architecture diagrams must be created manually (draw.io, Figma, TikZ).
+> ⚠️ **Figure generation scope:** `/paper-figure` auto-generates **data-driven plots** (training curves, bar charts, heatmaps) and **comparison tables** from JSON/CSV. For **architecture diagrams and method figures**: `illustration: gemini` (default) uses Claude→Gemini→Nano Banana Pro for publication-quality diagrams (needs `GEMINI_API_KEY`); `illustration: mermaid` generates Mermaid diagrams for free; `illustration: false` skips AI figures entirely.
 
 **Tested end-to-end:** Generated a 9-page ICLR 2026 theory paper (7 sections, 29 citations, 4 figures, 2 comparison tables) from a single NARRATIVE_REPORT.md — zero compilation errors, zero undefined references.
 
@@ -990,9 +990,9 @@ Skills are plain Markdown files. Fork and customize:
 | `HUMAN_CHECKPOINT` | false | When `true`, pause after each review round for approval | → `auto-review-loop` |
 | `WANDB` | false | Auto-add W&B logging to experiments | → `experiment-bridge` → `run-experiment` |
 | `CODE_REVIEW` | true | GPT-5.4 reviews experiment code before deployment | → `experiment-bridge` |
-| `ILLUSTRATION` | false | Auto-generate method diagrams via Gemini. Requires `GEMINI_API_KEY` | → `paper-writing` → `paper-illustration` |
+| `ILLUSTRATION` | `gemini` | AI illustration: `gemini` (default), `mermaid` (free), or `false` (skip) | → `paper-writing` |
 
-Override inline: `/research-pipeline "topic" — auto proceed: false, wandb: true, illustration: true`
+Override inline: `/research-pipeline "topic" — auto proceed: false, illustration: mermaid`
 
 ### Auto Review Loop (`auto-review-loop`)
 
@@ -1047,9 +1047,9 @@ Override inline: `/research-lit "topic" — sources: zotero, web`, `/research-li
 | `TARGET_VENUE` | `ICLR` | Target venue format: `ICLR`, `NeurIPS`, `ICML` |
 | `ANONYMOUS` | true | Use anonymous author block for blind review |
 | `MAX_PAGES` | 9 | Main body page limit (excluding references) |
-| `ILLUSTRATION` | false | Auto-generate architecture/method diagrams via Gemini. Requires `GEMINI_API_KEY` |
+| `ILLUSTRATION` | `gemini` | AI illustration mode: `gemini` (default, needs `GEMINI_API_KEY`), `mermaid` (free), or `false` (skip) |
 
-Override inline: `/paper-write — target venue: NeurIPS, illustration: true`
+Override inline: `/paper-write — target venue: NeurIPS, illustration: mermaid`
 
 ### General (all skills using Codex MCP)
 
