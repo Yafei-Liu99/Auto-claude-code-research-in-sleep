@@ -52,6 +52,8 @@ ARIS reads the paper → finds its weaknesses → clones the codebase → genera
 ```
 
 > From idea to paper to podium — one toolchain.
+>
+> These are full pipelines — you can also use each workflow independently. Already have an idea? Skip to Workflow 1.5. Have results? Jump to Workflow 3. See [Quick Start](#-quick-start) for all commands and [Workflows](#-workflows) for the full breakdown.
 
 ## 🏆 Papers Accepted with ARIS
 
