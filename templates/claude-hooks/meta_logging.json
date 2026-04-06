@@ -1,5 +1,4 @@
 {
-  "$schema": "https://docs.anthropic.com/claude-code/hooks-schema.json",
   "$comment": "ARIS Meta-Optimize: Passive event logging for harness optimization. Copy to .claude/settings.json or merge into existing settings.",
   "hooks": {
     "PostToolUse": [
