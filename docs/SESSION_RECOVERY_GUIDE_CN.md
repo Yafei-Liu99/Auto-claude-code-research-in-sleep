@@ -33,6 +33,8 @@ training_status: running on server-X, GPU 0-3, tmux=train01, wandb=run_id,
 active_tasks:
   - "training exp01 on server-X (tmux=exp01, GPU 0-3)"
   - "downloading dataset-Y on server-Z (tmux=download01)"
+language: en         # en | zh — 控制技能输出语言
+last_updated: ""     # YYYY-MM-DD HH:mm — 技能每次输出时自动更新
 next: 下一步行动
 ```
 
@@ -49,6 +51,7 @@ next: 下一步行动
 | `active_tasks` | 所有正在运行的任务（训练、下载、评估），含位置和检查方式 — 防止新 session 丢失对后台任务的追踪 | `training exp01 on b2 (GPU 0-3)` |
 | `next` | 具体下一步 | `"等训练完，在测试集上跑 eval"` |
 | `language` | 技能输出语言 | `en` 或 `zh` — 控制技能输出语言 |
+| `last_updated` | 技能最后输出时间 | `2025-06-15 14:30` — 技能自动更新 |
 
 ### 什么时候更新 Pipeline Status
 
@@ -160,7 +163,7 @@ done
 OUTPUT=""
 
 # 1. Read Pipeline Status
-STATUS=$(sed -n '/^## Pipeline Status/,/^## [^P]/p' "$PROJECT_DIR/CLAUDE.md" 2>/dev/null | head -15 | sed '$d')
+STATUS=$(sed -n '/^## Pipeline Status/,/^## /{ /^## Pipeline Status/d; /^## /d; p; }' "$PROJECT_DIR/CLAUDE.md" 2>/dev/null | head -15)
 if [ -n "$STATUS" ]; then
   OUTPUT="[session-restore] Research project detected. Current state:\n$STATUS"
 fi
@@ -259,7 +262,7 @@ echo "[pre-compact] Ensure these are up to date:"
 echo "  1. CLAUDE.md Pipeline Status (stage, idea, active_tasks, next)"
 echo "  2. idea-stage/docs/research_contract.md (current idea context and results)"
 echo "  3. EXPERIMENT_TRACKER.md (any unreported results)"
-echo "  4. REVIEW_STATE.json (if running auto-review-loop)"
+echo "  4. review-stage/REVIEW_STATE.json (if running auto-review-loop)"
 echo "[pre-compact] After compaction, read CLAUDE.md and idea-stage/docs/research_contract.md to recover."
 HOOKEOF
 chmod +x ~/.claude/hooks/pre-compact-remind.sh

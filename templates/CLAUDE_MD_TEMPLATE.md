@@ -3,7 +3,7 @@
 ## Pipeline Status
 
 ```yaml
-stage: idle          # idle | idea-discovery | experiment | review | paper-writing
+stage: idle          # idle | idea-discovery | implementation | training | review | paper
 active_idea: ""      # Current idea title (one line)
 contract: ""         # Path to research_contract.md (e.g., idea-stage/docs/research_contract.md)
 current_branch: ""   # Git branch for this idea
@@ -11,7 +11,7 @@ baseline: ""         # Baseline numbers for comparison
 training_status: idle  # idle | running | complete | failed
 language: en         # en | zh — controls skill output language (see shared-references/output-language.md)
 active_tasks: []
-next_action: ""      # Concrete next step
+next: ""             # Concrete next step
 last_updated: ""     # YYYY-MM-DD HH:mm — auto-updated by skills on every output write
 ```
 

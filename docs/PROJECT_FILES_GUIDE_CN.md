@@ -62,7 +62,7 @@ project/
 
 | 文件 | 定位 | 模板 |
 |------|------|------|
-| `idea-stage/IDEA_CANDIDATES.md` | 评审后存活的可行 idea 候选池 — idea 失败时从这里选下一个 | [`IDEA_CANDIDATES_TEMPLATE.md`](../templates/IDEA_CANDIDATES_TEMPLATE.md) |
+| `idea-stage/IDEA_CANDIDATES.md` | 评审后存活的可行 idea 候选池 — idea 失败时从这里选下一个 | [`IDEA_CANDIDATES_TEMPLATE_CN.md`](../templates/IDEA_CANDIDATES_TEMPLATE_CN.md) |
 | `findings.md` | 轻量级发现日志 — 实验异常、debug 根因、关键决策 | [`FINDINGS_TEMPLATE.md`](../templates/FINDINGS_TEMPLATE.md) |
 | `refine-logs/EXPERIMENT_LOG.md` | 完整实验记录 — 详细结果、配置、复现命令 | [`EXPERIMENT_LOG_TEMPLATE.md`](../templates/EXPERIMENT_LOG_TEMPLATE.md) |
 | `idea-stage/docs/research_contract.md` | 当前 idea 的聚焦工作文档（见[会话恢复指南](SESSION_RECOVERY_GUIDE_CN.md)） | [`RESEARCH_CONTRACT_TEMPLATE.md`](../templates/RESEARCH_CONTRACT_TEMPLATE.md) |
